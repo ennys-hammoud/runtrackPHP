@@ -1,19 +1,25 @@
 <?php
 // Définition de la fonction occurrences
 function occurrences($str, $char) {
-    // Compte le nombre d'occurrences du caractère dans la chaîne
+    // Initialiser un compteur
     $count = 0;
+
+    // Parcourir la chaîne caractère par caractère
     for ($i = 0; $i < strlen($str); $i++) {
+        // Si le caractère courant correspond à $char, incrémenter le compteur
         if ($str[$i] === $char) {
             $count++;
         }
     }
+
+    // Retourner le nombre d'occurrences
     return $count;
 }
 
-// Exemple d'utilisation de la fonction
-$str = "Hello La Plateforme!";
-$char = "e";
+// Exemple d'utilisation
+$str = "Bonjour";
+$char = "o";
 
-echo "Le caractère '$char' apparaît " . occurrences($str, $char) . " fois dans la chaîne.";
+$result = occurrences($str, $char);
+echo "Le caractère '$char' apparaît $result fois dans la chaîne '$str'.";
 ?>
