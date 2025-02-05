@@ -22,6 +22,10 @@ class Vehicule {
         echo "Année : " . $this->annee . "\n";
         echo "Prix : " . $this->prix . "€\n";
     }
+    // Méthode de démarrage par défaut
+    public function demarrer() {
+        echo "Attention, je roule !\n";
+    }
 }
 
 // Classe Voiture qui hérite de Vehicule
@@ -38,6 +42,10 @@ class Voiture extends Vehicule {
     public function informationsVehicule() {
         parent::informationsVehicule();
         echo "Nombre de portes : " . $this->portes . "\n";
+    }
+    // Surcharge de la méthode demarrer()
+    public function demarrer() {
+        echo "La voiture démarre en douceur... Vroum Vroum !\n";
     }
 }
 
@@ -63,13 +71,23 @@ class Moto extends Vehicule {
         parent::informationsVehicule();
         echo "Nombre de roues : " . $this->roue . "\n";
     }
+
+    // Surcharge de la méthode demarrer()
+    public function demarrer() {
+        echo "La moto démarre avec un rugissement... Brrrmm Brrrmm !\n";
+    }
 }
 
-// Instanciation d'un objet Moto
+// Instanciation d'un objet Voiture et Moto
+$maVoiture = new Voiture("Tesla", "Model 3", 2022, 45000);
 $maMoto = new Moto("Yamaha", "MT-07", 2023, 8000);
 
-// Affichage des informations de la moto
+// Affichage des informations et démarrage
+$maVoiture->informationsVehicule();
+$maVoiture->demarrer();
+echo "\n";
 $maMoto->informationsVehicule();
+$maMoto->demarrer();
 
 ?>
 
